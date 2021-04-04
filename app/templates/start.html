@@ -1,0 +1,20 @@
+<h1>MongoDB Homework: 6210546374</h1>
+<h2>Alphabet Guessing Game</h2>
+
+<br>
+
+<h3>PLEASE ENTER 4 ALPHABET FOR YOUR GUESSING GAME :)</h3>
+
+{% if game.step == 3 %}
+    <h3> ANSWER IS CREATED </h3>
+    <a class="btn btn-primary" href="{{ url_for('play_get') }}"> Click to Play </a>
+{% else %}
+    <p> ANSWER: | {{game.answer[0]}} | {{game.answer[1]}} | {{game.answer[2]}} | {{game.answer[3]}} | </p>
+
+    <form action="/start" method="post">
+        <input type="submit" name="choice" value="A" />
+        <input type="submit" name="choice" value="B" />
+        <input type="submit" name="choice" value="C" />
+        <input type="submit" name="choice" value="D" />
+    </form>
+{% endif %}
